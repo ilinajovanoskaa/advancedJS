@@ -12,7 +12,7 @@ fetch(
 
     //Return an array that will display only student's first name and last name as a string
 
-    const fullNames = sortedAverageGrade.forEach((person) => {
+    const fullNames = sortedAverageGrade.map((person) => {
       console.log(`${person.firstName} ${person.lastName}`);
     });
 
@@ -45,7 +45,8 @@ fetch(
     console.log(filteredFemale);
 
     const averageFemaleGrade =
-      filteredFemale.reduce((acc, person) => acc + person.averageGrade, 0) / 58;
+      filteredFemale.reduce((acc, person) => acc + person.averageGrade, 0) /
+      filteredFemale.length;
     console.log(averageFemaleGrade);
 
     // All male students with a name starting with B and average grade over 2
@@ -54,10 +55,8 @@ fetch(
       (person) =>
         person.gender === "Male" &&
         person.averageGrade > 2 &&
-        person.firstName.includes("B", 0)
+        person.firstName.startsWith("B")
     );
     console.log(maleStudentWithB);
   })
   .catch((error) => console.error(error));
-
-  
