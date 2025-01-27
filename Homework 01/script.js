@@ -15,7 +15,7 @@ fetch(
     const fullNames = sortedAverageGrade.map((person) => {
       return {
         firstName: person.firstName,
-        lastName
+        lastName: person.lastName
       }
     });
 
