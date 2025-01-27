@@ -13,8 +13,13 @@ fetch(
     //Return an array that will display only student's first name and last name as a string
 
     const fullNames = sortedAverageGrade.map((person) => {
-      console.log(`${person.firstName} ${person.lastName}`);
+      return {
+        firstName: person.firstName,
+        lastName
+      }
     });
+
+    console.log(fullNames);
 
     // All students with an average grade higher than 3
 
